@@ -12,12 +12,15 @@ public class EvaluadorPosfija {
             }
 
             if (Character.isDigit(c)) {
-                //Convierte el carácter numérico a número y lo mete a la pila
+                /*vuelve el carácter a número y lo mete a la pila*/
                 double valor = Character.getNumericValue(c);
                 pila.push(valor);
 
             } else {
-                // Es un operador: saca dos operandos y opera
+                /*
+                saca 2 y los opera 
+                 */
+                
                 double b = pila.pop();
                 double a = pila.pop();
                 double resultado = 0;
@@ -38,9 +41,9 @@ public class EvaluadorPosfija {
 
     public static void main(String[] args) {
         String[] pruebas = {
-            "342*+", // 3+4*2 = 11
-            "34+2*", // (3+4)*2 = 14
-            "62/3-" // 6/2-3 = 0
+            "342*+", 
+            "34+2*",
+            "62/3-" 
         };
 
         for (String expresion : pruebas) {
